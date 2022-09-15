@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SystemManager : MonoBehaviour
 {
-    static SystemManager intance;
+    static SystemManager intance = null;
 
-    public SystemManager Intance
+    public static SystemManager Instance
     {
         get
         {
@@ -25,6 +25,16 @@ public class SystemManager : MonoBehaviour
         intance = this;
     }
 
+    [SerializeField]
+    Player player;
+
+    public Player Hero
+    {
+        get
+        {
+            return player;
+        }
+    }
 
 
     // Start is called before the first frame update
