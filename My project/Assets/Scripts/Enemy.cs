@@ -132,6 +132,13 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        Player player = other.GetComponentInParent<Player>();
+        if (player)
+            player.OnCrash(this);
+    }
+
+    public void OnCrash(Player player)
+    {
+        Debug.Log("OnCrash player = " + player);
     }
 }
